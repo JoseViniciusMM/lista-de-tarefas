@@ -1,51 +1,57 @@
-import './assets/estilo.css';
-import {v4 as uuidv4} from 'uuid';
+import './assets/estilo.css'
+import {v4 as uuidv4} from 'uuid' 
 
-const formulario = document.querySelector<HTMLFormElement>('#formulario')
-const inputTarefa = document.querySelector<HTMLInputElement>('#tarefa')
-const listaTarefas = document.querySelector<HTMLDivElement>('#lista-tarefas')
+const formulario   = document.querySelector<HTMLFormElement>("#formulario")
+const inputTarefa  = document.querySelector<HTMLInputElement>("#tarefa")
+const tabelaTarefas = document.querySelector<HTMLDivElement>("#tabela-tarefas")
 
 interface Tarefa {
-  id: string,
-  tarefa: string,
+  id: string, 
+  tarefa: string
 }
 
 let listaDeTarefas: Tarefa[] = []
 
-function salvar () {
-  const dados = JSON.stringify(listaDeTarefas)
-  localStorage.setItem('tarefas', dados)
+function imprimirTabela(){
+  if (tabelaTarefas && Array.isArray(listaDeTarefas)) {
+    tabelaTarefas.innerHTML = `
+      <ul>
+        ${listaDeTarefas.map(i => `<li>${i.tarefa}</li>`).join('')}
+      </ul>
+    `
+  }
 }
 
-function recuperar () {
-  listaDeTarefas = JSON.parse(localStorage.getItem("tarefas"))
-  console.log(listaDeTarefas)
+function salvar(){
+  localStorage.setItem("lista-de-tarefas", JSON.stringify(listaDeTarefas))
+}
+
+function recuperar(){
+  const dados = localStorage.getItem("lista-de-tarefas")
+  if (dados) {
+    listaDeTarefas = JSON.parse(dados)
+  } else {
+    listaDeTarefas = []
+  }
 }
 
 recuperar()
-imprimirTabelaTarefas()
+imprimirTabela()
 
-function imprimirTabelaTarefas () {
-  listaTarefas.innerHTML = `
-  <ul>
-    ${listaDeTarefas.map(tarefa => `<li>${tarefa.tarefa}</li>`).join('')}
-  </ul>
-  `
-}
-
-formulario.addEventListener('submit', (e) => {
+formulario?.addEventListener('submit', (e) =>{
   e.preventDefault()
-
-  const tarefa: Tarefa = {
-    id: uuidv4(),
-    tarefa: inputTarefa.value
+  
+  if (inputTarefa && inputTarefa.value.trim() !== "") {
+    const novaTarefa: Tarefa = {
+      id: uuidv4(),
+      tarefa: inputTarefa.value
+    }
+    
+    listaDeTarefas.push(novaTarefa) 
+    
+    salvar()          
+    imprimirTabela()  
+    
+    inputTarefa.value = "" 
   }
-
-  listaDeTarefas.push(tarefa)
-
-  console.log(listaDeTarefas)
-
-  salvar()
-  recuperar()
 })
-
