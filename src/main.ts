@@ -16,7 +16,12 @@ function imprimirTabela(){
   if (tabelaTarefas && Array.isArray(listaDeTarefas)) {
     tabelaTarefas.innerHTML = `
       <ul>
-        ${listaDeTarefas.map(i => `<li>${i.tarefa}</li>`).join('')}
+        ${listaDeTarefas.map(i => `
+          <li>
+            <input type="checkbox" id="${i.id}">
+            <label for="${i.id}">${i.tarefa}</label>
+          </li>
+        `).join('')}
       </ul>
     `
   }
