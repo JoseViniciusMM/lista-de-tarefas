@@ -5,25 +5,43 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #6a0dad;
+    background-color: #0d32ad;
 }
 
-.conteudo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 20px;
-}
 
 .card {
     background-color: white;
     border-radius: 12px;       
     padding: 32px;
+    height: 620px;
     width: 100%;
     max-width: 400px;           
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3); 
+}
+
+
+.btn {
+    background-color: #1c45b8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 28px;
+    cursor: pointer;
+    min-width: 48px;        
+    min-height: 48px;
+}
+
+.btn:hover {
+    background-color: #5a0c9d; 
+}
+
+.tarefa-input {
+    flex: 1;                   
+    padding: 10px 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
 }
 
 h1 {
@@ -33,19 +51,53 @@ h1 {
     text-align: center;
 }
 
+
+h2 {
+    color: #ffdc17;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.conteudo {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    flex-direction: row;    
+    gap: 40px;               
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.imagem, .imagem1 {
+    width: auto; 
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 0; 
+}
+
+header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    padding: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.imagem3 {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    margin-bottom: 0; 
+} 
+
+
 #formulario div {
     display: flex;
     gap: 8px;                 
-}
+} 
 
-#tarefa {
-    flex: 1;                   
-    padding: 10px 14px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 15px;
-    outline: none;
-}
 
 
 #tabela-tarefas li {
@@ -54,24 +106,6 @@ h1 {
     gap: 10px;
     padding: 10px 0;
     border-bottom: 1px solid #eee; 
-}
-
-
-
-.btn:hover {
-    background-color: #5a0c9d; 
-}
-
-input[type="submit"] {
-    background-color: #6a0dad;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 22px;
-    cursor: pointer;
-    min-width: 48px;        
-    min-height: 48px;      
 }
 
 
@@ -101,4 +135,4 @@ li input[type="checkbox"] {
 li label {
     font-size: 15px;
     color: #333;
-}
+} 
