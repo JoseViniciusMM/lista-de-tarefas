@@ -8,16 +8,14 @@ body {
     background-color: #0d32ad;
 }
 
-
 .card {
     background-color: white;
     border-radius: 12px;       
     padding: 32px;
     height: 620px;
     width: 100%;
-    max-width: 400px;           
+    max-width: 500px;           
 }
-
 
 .btn {
     background-color: #1c45b8;
@@ -28,8 +26,23 @@ body {
     font-size: 28px;
     cursor: pointer;
     min-width: 48px;        
+    min-height: 48px;;
+}
+
+.btn-limpar {
+    background-color: #1c45b8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 12px;
+    min-width: 48px;        
     min-height: 48px;
 }
+
+.btn-limpar:hover {
+    background-color: #5a0c9d; 
+}   
 
 .btn:hover {
     background-color: #5a0c9d; 
@@ -92,13 +105,10 @@ header {
     margin-bottom: 0; 
 } 
 
-
 #formulario div {
     display: flex;
     gap: 8px;                 
 } 
-
-
 
 #tabela-tarefas li {
     display: flex;
@@ -120,7 +130,6 @@ li {
     align-items: center;
     gap: 10px;
     padding: 10px 0;
-    border-bottom: 1px solid #eee;
 }
 
 
@@ -136,3 +145,38 @@ li label {
     font-size: 15px;
     color: #333;
 } 
+
+.navbar {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.footer {
+    padding: 20px;
+    background-color: #1c45b8;
+}

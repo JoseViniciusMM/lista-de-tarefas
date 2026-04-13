@@ -6,11 +6,21 @@
 
   </head>
   <body>
-  <header class="header">
+  <header class="header" id="inicio">
     <img src="src/assets/img/29f3d6b173dc38e7ff09df8498e0cd78.jpeg" alt="Invincible" class="imagem3">
+  
+
   </header>
+
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#tarefas">Lista de Tarefas</a></li>
+      <li><a href="#fim">Fim</a></li>
+    </ul>
+  </nav>
     
-  <div class="conteudo">
+  <div class="conteudo" id="tarefas">
     <img src="src/assets/img/Invenc%3Fvel_Imperador.webp" alt="Invincible" class="imagem">
 
     <div class="card">              
@@ -18,8 +28,9 @@
         <H2>INVENCIVEL</H2>
         <form id="formulario" class="forms">
             <div>
-                <input class="tarefa-input" type="text" placeholder="Nova tarefa...">
-                <input class="btn" type="submit" value="+">
+                <input class="tarefa-input" id="tarefa-input" type="text" placeholder="Nova tarefa...">
+                <input class="btn" id="btn" type="submit" value="+">
+                <button class="btn-limpar" id="btn-limpar">Limpar tudo</button>
             </div>
         </form>
         <div id="tabela-tarefas"></div>
@@ -27,6 +38,12 @@
 
     <img src="src/assets/img/Invenc%3Fvel_roupa_1.webp" alt="Invincible" class="imagem1">
 </div>
+
+<footer>
+  <div class="footer" id="fim">
+
+  </div>
+</footer>
                           
 </div>
     <script type="module" src="./src/main.ts"></script>

@@ -2,7 +2,7 @@ import './assets/estilo.css'
 import {v4 as uuidv4} from 'uuid' 
 
 const formulario   = document.querySelector<HTMLFormElement>("#formulario")
-const inputTarefa  = document.querySelector<HTMLInputElement>("#tarefa")
+const inputTarefa  = document.querySelector<HTMLInputElement>("#tarefa-input")
 const tabelaTarefas = document.querySelector<HTMLDivElement>("#tabela-tarefas")
 
 interface Tarefa {
@@ -39,6 +39,14 @@ function recuperar(){
     listaDeTarefas = []
   }
 }
+
+const btnLimpar = document.querySelector<HTMLButtonElement>("#btn-limpar")
+
+btnLimpar?.addEventListener('click', () => {
+  listaDeTarefas = []
+  salvar()
+  imprimirTabela()
+})
 
 recuperar()
 imprimirTabela()
